@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Cards from "../../Components/Cards/Cards";
 import Services from "../Services/Services";
+import HappyClients from "../../Components/HappyClients/HappyClients";
 
 
 const Home = () => {
@@ -11,7 +12,7 @@ const Home = () => {
 
     return (
         <div className="my-5">
-            <div className="carousel w-full h-[70vh]">
+            <div className="carousel w-full h-[80vh]">
                 <div id="slide1" className="carousel-item relative w-full h-[70vh]">
                     <img src="https://i.ibb.co/Kbnt2FW/business-people-office-workplace-interaction-conversation-teamwork-concept.jpg" className="w-full h-[70vh]" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -41,6 +42,8 @@ const Home = () => {
                     events?.map((aevent) => (<Cards key={aevent.id} aevent={aevent}></Cards>))
                 }
             </div>
+
+            <HappyClients></HappyClients>
         </div>
     );
 };

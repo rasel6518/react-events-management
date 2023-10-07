@@ -7,13 +7,15 @@ const EventDetails = () => {
     const events = useLoaderData();
     console.log(events)
 
-    const [event, setEvent] = useState({})
+    const [event, setEvent] = useState([])
 
     useEffect(() => {
 
-        const findEvent = events?.find(singleEvent => singleEvent.id == id)
+        if (events) {
+            const findEvent = events?.events?.find(singleEvent => singleEvent.id == id)
 
-        setEvent(findEvent)
+            setEvent(findEvent)
+        }
 
     }
 
@@ -21,7 +23,15 @@ const EventDetails = () => {
 
     return (
         <div>
-            <img src={event.image} alt="" />
+            <div className="card my-10 w-9/12 mx-auto h-[70vh] bg-base-100 shadow-xl">
+                <figure><img src={event.image} alt="Shoes" /></figure>
+                <div className="card-body">
+                    <h2 className="card-title">{event.name}</h2>
+                    <p className="text-lg font-medium">{event.price}</p>
+                    <p>{event.description}</p>
+
+                </div>
+            </div>
         </div>
     );
 };

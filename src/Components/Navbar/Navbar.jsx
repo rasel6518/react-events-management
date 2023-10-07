@@ -1,7 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from '../../assets/logo.png'
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
+
+    const { user, LogOut } = useContext(AuthContext)
+
+    console.log(user);
+
+    const handleSignOut = () => {
+        LogOut()
+            .then()
+            .catch()
+    }
 
     const NavLinks = <>
         <li><NavLink to='/'
@@ -30,6 +42,20 @@ const Navbar = () => {
             }
         >CONTACT</NavLink></li>
 
+        {
+            user ? <li><NavLink to='/login' onClick={handleSignOut}
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active underline btn  mr-5 text-lg font-medium" : " mr-5 btn text-lg font-medium "
+                }
+            >SIGNOUT</NavLink></li> :
+                <li><NavLink to='/login'
+                    className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active underline btn  mr-5 text-lg font-medium" : " mr-5 btn text-lg font-medium "
+                    }
+                >LOGIN</NavLink></li>
+        }
+
+
     </>
     return (
         <div>
@@ -52,9 +78,10 @@ const Navbar = () => {
                         {NavLinks}
                     </ul>
                 </div>
-                <div className=" mr-10">
+                {/* <div className=" mr-10">
+
                     <Link to='/login' > <button className="btn bg-base-100">LOGIN</button></Link>
-                </div>
+                </div> */}
             </div>
         </div>
     );
