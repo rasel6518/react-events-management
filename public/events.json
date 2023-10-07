@@ -1,0 +1,67 @@
+{
+    "events": [
+        {
+            "id": 1,
+            "type": "Tech Conference",
+            "name": "TechCon 2023",
+            "image": "https://i.ibb.co/4MpXXd3/Tech-Conference.jpg",
+            "date": "2023-05-15",
+            "location": "TechHub Convention Center",
+            "price": "$199",
+            "description": "Join us for TechCon 2023, where industry leaders and experts will share insights on the latest trends in technology.",
+            "buttonText": "Details"
+        },
+        {
+            "id": 2,
+            "type": "Gaming Convention",
+            "name": "GameFest 2023",
+            "image": "https://i.ibb.co/Yd2mmnN/Gaming-Convention.jpg",
+            "date": "2023-07-22",
+            "location": "Gamer's Paradise Arena",
+            "price": "$149",
+            "description": "GameFest 2023 is the ultimate gaming experience. Join gamers from around the world for a weekend of competition.",
+            "buttonText": "Details"
+        },
+        {
+            "id": 3,
+            "type": "Hackathon",
+            "name": "CodeJam Hackathon",
+            "image": "https://i.postimg.cc/J0Jr6BYr/Hackathon.jpg",
+            "date": "2023-08-18",
+            "location": "Innovation Hub",
+            "price": "$300",
+            "description": "CodeJam Hackathon is your chance to showcase your coding skills. Collaborate, innovate, and compete for exciting prizes!",
+            "buttonText": "Details"
+        },
+        {
+            "id": 4,
+            "name": "VR Gaming Expo",
+            "image": "https://i.ibb.co/64FfBnj/VR-Gaming-Expo.jpg",
+            "price": "$249",
+            "description": "Immerse yourself in the world of virtual reality gaming. Try out the latest VR games and technologies.",
+            "buttonText": "Details"
+        },
+        {
+            "id": 5,
+            "type": "Innovation Expo",
+            "name": "InnoExpo 2023",
+            "image": "https://i.ibb.co/2MpSjhR/Innovation-Expo.jpg",
+            "date": "2023-11-08",
+            "location": "Innovation Arena",
+            "price": "$249",
+            "description": "Explore the latest innovations and groundbreaking technologies. InnoExpo 2023 is your gateway to the future.",
+            "buttonText": "Details"
+        },
+        {
+            "id": 6,
+            "type": "Digital Marketing Expo",
+            "name": "DigiMark Expo",
+            "image": "https://i.ibb.co/g4VsdNV/Digital-Marketing.jpg",
+            "date": "2024-01-20",
+            "location": "Digital Arena",
+            "price": "$199",
+            "description": "Stay ahead in the world of digital marketing. DigiMark Expo brings together marketing experts and digital enthusiasts.",
+            "buttonText": "Details"
+        }
+    ]
+}
