@@ -13,6 +13,7 @@ import Contact from './Pages/Contact/Contact';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import EventDetails from './Components/EventDetails/EventDetails';
+import ErrorPage from './Components/ErrorPage/ErrorPage';
 
 
 
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -35,6 +37,7 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services></Services>,
+
       },
       {
         path: "/blog",
@@ -53,8 +56,9 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "/eventdetails",
+        path: "/eventdetails/:id",
         element: <EventDetails></EventDetails>,
+        loader: () => fetch('/public/events.json')
       },
     ],
   },

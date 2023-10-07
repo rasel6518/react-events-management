@@ -52,8 +52,8 @@ const Navbar = () => {
                         {NavLinks}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <Link to='/login' > <button className="btn">LOGIN</button></Link>
+                <div className=" mr-10">
+                    <Link to='/login' > <button className="btn bg-base-100">LOGIN</button></Link>
                 </div>
             </div>
         </div>

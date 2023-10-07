@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Cards from "../../Components/Cards/Cards";
+import Services from "../Services/Services";
 
 
 const Home = () => {
@@ -37,7 +38,7 @@ const Home = () => {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto w-9/12">
                 {
-                    events?.map((aevent) => (<Cards key={aevent.id} aevent={aevent} ></Cards>))
+                    events?.map((aevent) => (<Cards key={aevent.id} aevent={aevent}></Cards>))
                 }
             </div>
         </div>
