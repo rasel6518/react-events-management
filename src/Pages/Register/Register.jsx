@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
@@ -21,7 +22,7 @@ const Register = () => {
         CreateUser(email, password)
             .then(result => {
                 const SignUpUser = result.user;
-                console.log(SignUpUser);
+
                 navigate('/login');
             })
             .catch(err => {
@@ -31,6 +32,7 @@ const Register = () => {
             })
 
         e.currentTarget.reset()
+        toast('Register  Successful');
 
     }
     return (
@@ -66,12 +68,10 @@ const Register = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
-                                {/* <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label> */}
+
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Register</button>
+                                <button className="btn  hover:bg-gray-700 bg-black text-white">Register</button>
                             </div>
                         </form>
                         <div className=" mb-5 text-center p-3">
@@ -80,6 +80,18 @@ const Register = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light">
+
+            </ToastContainer>
         </div>
     );
 };

@@ -1,6 +1,9 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useContext } from "react";
+import { FaGoogle } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -13,11 +16,14 @@ const Login = () => {
         googleLogin()
             .then(result => {
                 console.log(result.user);
+
                 navigate(location?.state ? location.state : '/')
             })
             .catch(err => {
                 console.error(err.message)
             })
+        toast('Login  Successful');
+
     }
 
     const handlelogin = e => {
@@ -30,8 +36,12 @@ const Login = () => {
 
         logIn(email, password)
             .then(result => {
+
                 console.log(result.user);
+
+
                 navigate(location?.state ? location.state : '/')
+
 
 
             })
@@ -39,6 +49,7 @@ const Login = () => {
                 console.error(err.message)
             })
         e.currentTarget.reset()
+        toast('Login  Successful');
     }
 
 
@@ -64,17 +75,17 @@ const Login = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
+
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn hover:bg-gray-700  bg-black text-white">Login</button>
                             </div>
                         </form>
 
-                        <div className="text-center ">
-                            <button onClick={handleGoogleLogIn} className="btn ">Google sign</button>
+                        <p className="text-center  font-bold mb-5">OR </p>
+
+                        <div className=" form-control text-center px-9 ">
+                            <button onClick={handleGoogleLogIn} className="btn bg-black text-white hover:bg-gray-700 "><FaGoogle></FaGoogle> Login With Google</button>
                         </div>
                         <div className=" mb-5 text-center p-3">
                             Do Not Have An Account ? <Link className="text-blue-400 font-medium" to='/register'> Register</Link>
@@ -82,6 +93,18 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light">
+
+            </ToastContainer>
 
         </div>
     );
