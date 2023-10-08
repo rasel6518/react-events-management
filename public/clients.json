@@ -1,21 +1,21 @@
 [
     {
         "id": 1,
-        "name": "John Doe",
+        "name": "Sophia Reynolds",
         "designation": "CEO",
         "company": "ABC Corp",
         "review": "“The DRREM teams assistance with the planning and site management of our annual conference was outstanding. We look forward to working with them in the future.”"
     },
     {
         "id": 2,
-        "name": "Jane Smith",
+        "name": "Noah Hayes",
         "designation": "CTO",
         "company": "XYZ Tech",
         "review": "“I truly appreciate the marketing and design guidance that the DRREM provided me…it was invaluable…and business is booming.”"
     },
     {
         "id": 3,
-        "name": "Alex Johnson",
+        "name": "Ava Peterson",
         "designation": "COO",
         "company": "123 Industries",
         "review": "“The Behind the Bench Gala was a fabulous event. The staff of D.R. Roberts Event Management is very professional, and they deliver on all the promises they make. I really enjoyed working with the Event Doctor. Great Team Players!”"

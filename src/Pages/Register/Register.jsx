@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { updateProfile } from "firebase/auth";
+import auth from "../../Firebase/firebase.config";
 
 
 const Register = () => {
@@ -22,6 +24,14 @@ const Register = () => {
         CreateUser(email, password)
             .then(result => {
                 const SignUpUser = result.user;
+
+                updateProfile(result.user,
+                    {
+                        displayName: name,
+                        photoURL: photourl
+                    })
+                    .then(() => console.log("Update Profile"))
+                    .catch(err => console.log(err.message))
 
                 navigate('/login');
             })

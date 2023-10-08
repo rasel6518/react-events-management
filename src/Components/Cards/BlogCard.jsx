@@ -18,7 +18,7 @@ const BlogCard = ({ blog }) => {
                             </a>
                             <div className="flex flex-col flex-1 p-6">
                                 <div rel="noopener noreferrer" aria-label="Te nulla oportere reprimique his dolorum"></div>
-                                <div rel="noopener noreferrer" className="text-xs tracki uppercase hover:underline dark:text-violet-400">{author}</div>
+                                <div rel="noopener noreferrer" className="text-xl  ">{author}</div>
                                 <h3 className="flex-1 py-2 text-lg font-semibold leadi">
                                     {excerpt.length > 80 ? (
                                         <div>{excerpt.slice(0, 80)}....

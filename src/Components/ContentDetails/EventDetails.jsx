@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 
 const EventDetails = () => {
@@ -23,12 +23,17 @@ const EventDetails = () => {
 
     return (
         <div>
-            <div className="card my-10 w-9/12 mx-auto h-[80vh] bg-base-100 shadow-xl">
-                <figure><img src={event.image} alt="Shoes" /></figure>
+            <div className="card my-10 w-9/12 mx-auto  bg-base-100 shadow-xl">
+                <figure><img src={event.image} alt="Shoes" className="h-[80vh] w-full" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{event.name}</h2>
                     <p className="text-lg font-medium">{event.price}</p>
                     <p>{event.description}</p>
+                    <div className="card-actions ">
+                        <Link to='/booking'>
+                            <button className="btn bg-black hover:bg-gray-700 text-white">Booking</button>
+                        </Link>
+                    </div>
 
                 </div>
             </div>

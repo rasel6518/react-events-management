@@ -39,16 +39,24 @@ const Navbar = () => {
                 isPending ? "pending" : isActive ? "active underline mr-5 text-lg font-medium " : " mr-5  text-lg font-medium"
             }
         >BLOG</NavLink></li>
-        <li><NavLink to='/about'
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active underline mr-5 text-lg font-medium  " : "mr-5 text-lg font-medium "
-            }
-        >ABOUT</NavLink></li>
-        <li><NavLink to='/contact'
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active underline  mr-5 text-lg font-medium" : " mr-5 text-lg font-medium "
-            }
-        >CONTACT</NavLink></li>
+
+        {
+            user ? '' : <li><NavLink to='/about'
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active underline mr-5 text-lg font-medium  " : "mr-5 text-lg font-medium "
+                }
+            >ABOUT</NavLink></li>
+        }
+
+
+
+        {
+            user ? '' : <li><NavLink to='/contact'
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active underline  mr-5 text-lg font-medium" : " mr-5 text-lg font-medium "
+                }
+            >CONTACT</NavLink></li>
+        }
 
         {
             user ? <li><NavLink to='/login' onClick={handleSignOut}
@@ -86,10 +94,17 @@ const Navbar = () => {
                         {NavLinks}
                     </ul>
                 </div>
-                {/* <div className=" mr-10">
 
-                    <Link to='/login' > <button className="btn bg-base-100">LOGIN</button></Link>
-                </div> */}
+                {
+                    user ? <li>
+                        {user.displayName && user.photoURL ? <span className="">
+                            <div className="flex items-center gap-1 pr-5">
+                                <p className="text-sm font-medium  text-slate-600 ">{user.displayName}</p>
+                                <img src={user.photoURL} className="w-[40px] h-[40px] rounded-full mb-4" alt="" />
+                            </div>
+                        </span> : ''}
+                    </li> : ''
+                }
             </div>
         </div>
     );
