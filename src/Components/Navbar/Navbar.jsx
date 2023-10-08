@@ -26,6 +26,14 @@ const Navbar = () => {
                 isPending ? "pending" : isActive ? "active underline mr-5 text-lg font-medium " : "mr-5 text-lg font-medium "
             }
         >SERVICES</NavLink></li>
+        {
+            user ? <li><NavLink to='/booking'
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active underline mr-5 text-lg font-medium " : " mr-5  text-lg font-medium"
+                }
+            >BOOKING</NavLink></li>
+                : ''
+        }
         <li><NavLink to='/blog'
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active underline mr-5 text-lg font-medium " : " mr-5  text-lg font-medium"

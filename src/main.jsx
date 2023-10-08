@@ -16,6 +16,7 @@ import EventDetails from './Components/EventDetails/EventDetails';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import AuthProvider from './Providers/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Booking from './Pages/Booking/Booking';
 
 
 
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/booking",
+        element: <PrivateRoute><Booking></Booking></PrivateRoute>,
       },
       {
         path: "/eventdetails/:id",

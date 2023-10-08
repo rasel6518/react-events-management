@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ibb.co/jGp9JW2/xr-expo-ip-Dh-OQ5gt-Ek-unsplash.jpg",
+        "subject": "The Rise of Virtual Reality in Tech Events",
+        "date": "2023-10-15",
+        "author": "John Doe",
+        "excerpt": "Exploring the transformative impact of virtual reality on the landscape of tech events and how it's reshaping attendee experiences."
+    },
+    {
+        "id": 2,
+        "image": "https://i.ibb.co/qFT5hmn/josh-berendes-t6e0nt-PJ1-RE-unsplash.jpg",
+        "subject": "Esports: The Mainstream Phenomenon",
+        "date": "2023-10-18",
+        "author": "Jane Smith",
+        "excerpt": "Diving into the explosive growth of esports, its journey from niche to mainstream, and the pivotal role it plays in gaming events."
+    },
+    {
+        "id": 3,
+        "image": "https://i.ibb.co/bRDzbBP/traxer-XRRFJ2-FKay8-unsplash.jpg",
+        "subject": "Blockchain and Ticketing: Revolutionizing Event Access",
+        "date": "2023-11-01",
+        "author": "Sophia Patel",
+        "excerpt": "Delving into the integration of blockchain technology in event ticketing systems, ensuring security, transparency, and preventing fraudulent activities."
+    }
+]
