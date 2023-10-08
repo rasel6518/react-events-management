@@ -2,13 +2,22 @@ import { useLoaderData } from "react-router-dom";
 import Cards from "../../Components/Cards/Cards";
 
 import HappyClients from "../../Components/HappyClients/HappyClients";
+import { useEffect, useState } from "react";
+import BlogCard from "../../Components/Cards/BlogCard";
 
 
 const Home = () => {
     const eventData = useLoaderData()
+    const [blogs, setBlogs] = useState([])
 
     const { events } = eventData
     console.log(events);
+
+    useEffect(() => {
+        fetch('blog.json')
+            .then(res => res.json())
+            .then(data => setBlogs(data))
+    }, [])
 
     return (
         <div className="my-5">
@@ -41,6 +50,16 @@ const Home = () => {
                 {
                     events?.map((aevent) => (<Cards key={aevent.id} aevent={aevent}></Cards>))
                 }
+            </div>
+
+            <div className="">
+                <h1 className="text-center font-bold mt-10 font-serif text-3xl">Our Blogs</h1>
+                <div className=" grid md:grid-cols-2 my-10 h-[400] lg:grid-cols-3 gap-5 mx-auto w-9/12">
+                    {
+                        blogs?.map(blog => (<BlogCard key={blog.id} blog={blog}></BlogCard>))
+                    }
+
+                </div>
             </div>
 
             <HappyClients></HappyClients>

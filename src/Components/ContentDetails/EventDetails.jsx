@@ -23,7 +23,7 @@ const EventDetails = () => {
 
     return (
         <div>
-            <div className="card my-10 w-9/12 mx-auto h-[70vh] bg-base-100 shadow-xl">
+            <div className="card my-10 w-9/12 mx-auto h-[80vh] bg-base-100 shadow-xl">
                 <figure><img src={event.image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{event.name}</h2>

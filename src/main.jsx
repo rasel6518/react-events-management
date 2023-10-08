@@ -12,11 +12,12 @@ import Blog from './Pages/Blog/Blog';
 import Contact from './Pages/Contact/Contact';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
-import EventDetails from './Components/EventDetails/EventDetails';
+import EventDetails from './Components/ContentDetails/EventDetails';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import AuthProvider from './Providers/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Booking from './Pages/Booking/Booking';
+import BlogDetails from './Components/ContentDetails/BlogDetails';
 
 
 
@@ -66,6 +67,11 @@ const router = createBrowserRouter([
         path: "/eventdetails/:id",
         element: <PrivateRoute><EventDetails></EventDetails></PrivateRoute>,
         loader: () => fetch('/public/events.json')
+      },
+      {
+        path: "/blogdetails/:id",
+        element: <PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
+        loader: () => fetch('/public/blog.json')
       },
     ],
   },
