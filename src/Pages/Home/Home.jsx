@@ -1,12 +1,19 @@
 import { useLoaderData } from "react-router-dom";
 import Cards from "../../Components/Cards/Cards";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import HappyClients from "../../Components/HappyClients/HappyClients";
 import { useEffect, useState } from "react";
 import BlogCard from "../../Components/Cards/BlogCard";
 
 
 const Home = () => {
+
+    useEffect(() => {
+        AOS.init(
+            { duration: 2000, }
+        );
+    }, [])
     const eventData = useLoaderData()
     const [blogs, setBlogs] = useState([])
 
@@ -20,7 +27,7 @@ const Home = () => {
     }, [])
 
     return (
-        <div className="my-5">
+        <div data-aos="fade-up" className="my-5 ">
             <div className="carousel w-full h-[80vh]">
                 <div id="slide1" className="carousel-item relative w-full h-[70vh]">
                     <img src="https://i.ibb.co/Kbnt2FW/business-people-office-workplace-interaction-conversation-teamwork-concept.jpg" className="w-full h-[70vh]" />
@@ -46,13 +53,13 @@ const Home = () => {
                 </div>
 
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto w-9/12">
+            <div data-aos="slide-right" className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto w-9/12">
                 {
                     events?.map((aevent) => (<Cards key={aevent.id} aevent={aevent}></Cards>))
                 }
             </div>
 
-            <div className="">
+            <div data-aos="slide-left" className="">
                 <h1 className="text-center font-bold mt-10 font-serif text-3xl">Our Blogs</h1>
                 <div className=" grid md:grid-cols-2 my-10 h-[400] lg:grid-cols-3 gap-5 mx-auto w-9/12">
                     {

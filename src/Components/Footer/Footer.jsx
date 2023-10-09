@@ -7,10 +7,10 @@ const Footer = () => {
             <footer className="footer p-10 bg-base-300 text-base-content">
                 <nav>
                     <header className="footer-title">Services</header>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    <a className="link link-hover">Tech Conference</a>
+                    <a className="link link-hover">Gaming Convention</a>
+                    <a className="link link-hover">Hackathon</a>
+                    <a className="link link-hover">VR Gaming Expo</a>
                 </nav>
                 <nav>
                     <header className="footer-title">Quick Links</header>
