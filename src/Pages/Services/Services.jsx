@@ -7,7 +7,7 @@ const Services = () => {
 
     const [services, setServices] = useState([]);
 
-    console.log(services.events);
+
 
     useEffect(() => {
 

@@ -1,6 +1,6 @@
 # Events-planet
 
-My project live link https://dapper-salamander-a82bc7.netlify.app
+My project live link https://eventplanet-8041f.web.app
 
 - Authentication:Enables user registration, login, and logout functionalities, ensuring secure access to personalized features.
 - Image Carousel:

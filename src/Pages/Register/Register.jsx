@@ -57,7 +57,7 @@ const Register = () => {
             .catch((err) => {
                 const errorCode = err.code;
                 const errorMessage = err.message;
-                console.log(errorCode, errorMessage);
+
             });
 
         e.currentTarget.reset();

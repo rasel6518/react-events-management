@@ -7,7 +7,7 @@ const Navbar = () => {
 
     const { user, LogOut } = useContext(AuthContext)
 
-    console.log(user);
+
 
     const handleSignOut = () => {
         LogOut()

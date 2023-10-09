@@ -15,12 +15,12 @@ const Login = () => {
     const handleGoogleLogIn = () => {
         googleLogin()
             .then(result => {
-                console.log(result.user);
+
 
                 navigate(location?.state ? location.state : '/')
             })
             .catch(err => {
-                console.error(err.message)
+
 
             })
         toast.success('Login  Successful');
@@ -38,7 +38,7 @@ const Login = () => {
         logIn(email, password)
             .then(result => {
 
-                console.log(result.user);
+
 
 
                 navigate(location?.state ? location.state : '/')
@@ -48,7 +48,7 @@ const Login = () => {
 
             })
             .catch(err => {
-                console.error(err.message)
+
                 const errorCode = err.code;
 
                 if (errorCode === 'auth/wrong-password') {
