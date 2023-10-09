@@ -11,7 +11,7 @@ const Home = () => {
     const [blogs, setBlogs] = useState([])
 
     const { events } = eventData
-    console.log(events);
+
 
     useEffect(() => {
         fetch('blog.json')

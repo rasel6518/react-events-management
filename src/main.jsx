@@ -32,7 +32,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('/public/events.json')
+        loader: () => fetch('events.json')
       },
       {
         path: "/about",
@@ -66,12 +66,12 @@ const router = createBrowserRouter([
       {
         path: "/eventdetails/:id",
         element: <PrivateRoute><EventDetails></EventDetails></PrivateRoute>,
-        loader: () => fetch('/public/events.json')
+        loader: () => fetch('events.json')
       },
       {
         path: "/blogdetails/:id",
         element: <PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
-        loader: () => fetch('/public/blog.json')
+        loader: () => fetch('blog.json')
       },
     ],
   },

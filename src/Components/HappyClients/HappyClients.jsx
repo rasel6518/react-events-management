@@ -8,7 +8,7 @@ const HappyClients = () => {
         fetch('clients.json')
             .then(res => res.json())
             .then(data => setReviews(data))
-            .catch(error => console.error('Error fetching data:', error));
+
     }, []);
 
     const backgroundImageStyle = {

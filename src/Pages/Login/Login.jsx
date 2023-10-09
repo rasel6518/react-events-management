@@ -21,8 +21,9 @@ const Login = () => {
             })
             .catch(err => {
                 console.error(err.message)
+
             })
-        toast('Login  Successful');
+        toast.success('Login  Successful');
 
     }
 
@@ -41,15 +42,32 @@ const Login = () => {
 
 
                 navigate(location?.state ? location.state : '/')
+                toast.success('Login  Successful');
 
 
 
             })
             .catch(err => {
                 console.error(err.message)
+                const errorCode = err.code;
+
+                if (errorCode === 'auth/wrong-password') {
+                    toast.error('Password is incorrect. Please try again.')
+
+                } else if (errorCode === 'auth/user-not-found') {
+                    toast.error('No user found with this email. Please check your email and try again.')
+
+                } else if (errorCode === 'auth/invalid-login-credentials') {
+                    toast.error('Invalid login information')
+
+                }
+
+                else {
+                    toast.error('Login failed. Please try again.')
+                }
             })
         e.currentTarget.reset()
-        toast('Login  Successful');
+
     }
 
 

@@ -4,47 +4,69 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from "firebase/auth";
-import auth from "../../Firebase/firebase.config";
+
 
 
 const Register = () => {
     const { CreateUser } = useContext(AuthContext)
     const navigate = useNavigate();
 
-    const handleRegister = e => {
-        e.preventDefault()
+    const handleRegister = (e) => {
+        e.preventDefault();
 
-        const form = new FormData(e.currentTarget)
+        const form = new FormData(e.currentTarget);
 
-        const name = form.get('name')
-        const photourl = form.get('photourl')
-        const email = form.get('email')
-        const password = form.get('password')
-        console.log(name, photourl, email, password)
+        const name = form.get("name");
+        const photourl = form.get("photourl");
+        const email = form.get("email");
+        const password = form.get("password");
+
+        // Password validation
+        const hasMinLength = password.length >= 6;
+        const hasCapitalLetter = /[A-Z]/.test(password);
+        const hasSpecialCharacter = /[!@#$%^&*()_+]/.test(password);
+
+        if (!hasMinLength) {
+            toast.error("Password must be at least 6 characters long.");
+            return;
+        }
+
+        if (!hasCapitalLetter) {
+            toast.error("Password must contain at least one capital letter.");
+            return;
+        }
+
+        if (!hasSpecialCharacter) {
+            toast.error("Password must contain at least one special character.");
+            return;
+        }
+
         CreateUser(email, password)
-            .then(result => {
+            .then((result) => {
                 const SignUpUser = result.user;
 
-                updateProfile(result.user,
-                    {
-                        displayName: name,
-                        photoURL: photourl
-                    })
+                updateProfile(result.user, {
+                    displayName: name,
+                    photoURL: photourl,
+                })
                     .then(() => console.log("Update Profile"))
-                    .catch(err => console.log(err.message))
+                    .catch((err) => console.log(err.message));
 
-                navigate('/login');
+                navigate("/login");
             })
-            .catch(err => {
+            .catch((err) => {
                 const errorCode = err.code;
                 const errorMessage = err.message;
                 console.log(errorCode, errorMessage);
-            })
+            });
 
-        e.currentTarget.reset()
-        toast('Register  Successful');
+        e.currentTarget.reset();
+        toast.success("Registration successful!");
+    };
 
-    }
+
+
+
     return (
         <div>
             <div className="hero w-full min-h-screen bg-base-200">
